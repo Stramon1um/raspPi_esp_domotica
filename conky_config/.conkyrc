@@ -1,0 +1,101 @@
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages 
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+#
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+#own_window_type desktop
+own_window_hints undecorated,below,skip_taskbar
+background no
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer yes
+use_xft yes
+
+# Update interval in seconds
+update_interval 2
+
+# Minimum size of text area
+minimum_size 300 5
+
+# Draw shades?
+draw_shades no
+
+# Text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 8
+
+# border margins
+border_margin 4
+
+# border width
+border_width 1
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color white
+default_shade_color black
+default_outline_color white
+
+own_window_colour brown
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 10
+gap_y 35
+
+# Next three lines added for Unity compatibility.
+override_utf8_locale no
+xftfont Terminus:size=8
+xftalpha 0.8
+
+# stuff after 'TEXT' will be formatted on screen
+
+
+TEXT
+$color
+${color orange}SYSTEM ${hr 2}$color
+$nodename $alignr $sysname $kernel on $machine
+Uptime: ${uptime} $alignr
+
+${color orange}CPU ${hr 2}$color
+${freq}MHz  Temp: ${acpitemp} C
+CPU1: ${cpu cpu1}% ${cpubar cpu1}
+CPU2: ${cpu cpu2}% ${cpubar cpu2}
+CPU3: ${cpu cpu3}% ${cpubar cpu3}
+CPU4: ${cpu cpu4}% ${cpubar cpu4}
+${cpugraph ff0000 ff0000}
+
+${color orange}MEMORY / DISK ${hr 2}$color
+RAM:   $memperc%   ${membar 6}$color
+Swap:  $swapperc%   ${swapbar 6}$color
+
+HDD:  ${fs_used_perc /}%   ${fs_bar 6 /}$color
+
+${color orange}WIRELESS NETWORK (${addr wlan0}) ${hr 2}$color
+ESSID: ${wireless_essid wlan0} - ${wireless_link_qual_perc wlan0}%
+Down: $color${downspeed wlan0} ${alignr}Up: ${upspeed wlan0}
+${downspeedgraph wlan0 25,140 00ff00 00ff00} ${alignr}${upspeedgraph wlan0
+25,140 ff0000 ff0000}$color
+Total: ${totaldown wlan0} ${alignr}Total: ${totalup wlan0}

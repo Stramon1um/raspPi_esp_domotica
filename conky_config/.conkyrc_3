@@ -1,0 +1,89 @@
+# UBUNTU-CONKY
+# A comprehensive conky script, configured for use on
+# Ubuntu / Debian Gnome, without the need for any external scripts.
+#
+# Based on conky-jc and the default .conkyrc.
+# INCLUDES:
+# - tail of /var/log/messages 
+# - netstat connections to your computer
+#
+# -- Pengo (conky@pengo.us)
+#
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+#own_window_type desktop
+own_window_hints undecorated,below,skip_taskbar
+background no
+text_buffer_size 350
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# fiddle with window
+use_spacer yes
+use_xft yes
+
+# Update interval in seconds
+update_interval 600
+
+# Minimum size of text area
+minimum_size 300 5
+
+# Draw shades?
+draw_shades no
+
+# Text stuff
+draw_outline no # amplifies text if yes
+draw_borders no
+
+uppercase no # set to yes if you want all text to be in uppercase
+
+# Stippled borders?
+stippled_borders 8
+
+# border margins
+border_margin 4
+
+# border width
+border_width 1
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color white
+default_shade_color black
+default_outline_color white
+
+own_window_colour brown
+own_window_transparent yes
+
+# Text alignment, other possible values are commented
+alignment top_left
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 690
+gap_y 50
+
+# Next three lines added for Unity compatibility.
+override_utf8_locale yes
+xftfont Terminus:size=8
+xftalpha 0.8
+
+# stuff after 'TEXT' will be formatted on screen
+
+
+TEXT
+${color red}${rss http://xml2.corriereobjects.it/rss/homepage.xml 15 item_titles 9 }$color
+${color orange}${rss http://www.repubblica.it/rss/homepage/rss2.0.xml 15 item_titles 9 }$color
+${color yellow}${rss https://www.ansa.it/sito/ansait_rss.xml 15 item_titles 9 }$color
+---
+${color green}${rss https://www.ansa.it/trentino/notizie/trentino_rss.xml 15 item_titles 9 }$color
+${color blu}${rss https://www.altoadige.it/cmlink/cronaca-bolzano-1.164 15 item_titles 9 }$color
+---
+${color lightblue}${rss http://feeds.macrumors.com/MacRumors-All?format=xml 15 item_titles 9}$color
+---
+${color purple}${rss https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml 15 item_titles 9 }$color
+---
+${color white}${rss https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada 15 item_titles 9 }$color
