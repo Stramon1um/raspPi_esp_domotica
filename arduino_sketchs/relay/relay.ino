@@ -1,3 +1,5 @@
+// script generale per relay
+
 const int relay = 26;
 
 void setup() {
