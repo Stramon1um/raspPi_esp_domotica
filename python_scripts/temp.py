@@ -20,4 +20,4 @@ while True:
     client.publish("test/message",cpu.temperature)
     #client.publish("test/ram", psutil.virtual_memory()[2])
     #client.publish("test/cpu", psutil.cpu_percent())
-    time.sleep(60)
+    time.sleep(300)
