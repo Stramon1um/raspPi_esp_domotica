@@ -3,9 +3,9 @@
 
 //#define RELAY 2 // relay connected to  GPIO0
 
-const char* ssid = "TIM-23978315";
-const char* password = "zpXDUrXFcMMAigFqdAaZ4ZwC";
-const char* mqtt_server = "192.168.1.18";
+const char* ssid = "";
+const char* password = "";
+const char* mqtt_server = "192.168.1.X";
 const int buttonPin = 4;  // the number of the pushbutton pin
 int buttonState = 0;
 int stato_luce = 0;
