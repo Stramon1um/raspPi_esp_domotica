@@ -1,0 +1,1 @@
+[{"id":"66c1dbd8.e6b684","type":"telegrambot-command","z":"b937a168.83712","d":true,"name":"","bot":"adb85416.3a2058","command":"/photo","commandType":"str","commandCase":false,"x":110,"y":560,"wires":[["bf0671ac.7ad56"]]},{"id":"adb85416.3a2058","type":"telegrambot-config","botname":"Cam_Bot","usernames":"Stramon1um","chatIds":"109140731","pollInterval":"300"}]
